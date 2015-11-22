@@ -1,0 +1,40 @@
+[include]
+    path = .gitconfig.local
+[core]
+    editor = /usr/bin/vim
+    autocrlf = input
+    packedGitLimit = 64m
+    packedGitWindowSize = 64m
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
+[pack]
+    threads = 2
+    deltaCacheSize = 64m
+    packSizeLimit = 64m
+    windowMemory = 64m
+[push]
+    default = current
+[gc]
+    auto=1
+[merge]
+    summary=true
+[alias]
+    glog = log --graph
+    oglog = log --graph --oneline
+    hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+    unstage = reset HEAD
+    uncommit = reset --soft HEAD^
+    ls = ls-files
+    branches = branch -vv
+    remotes = remote -v
+    assume = update-index --assume-unchanged
+    unassume = update-index --no-assume-unchanged
+    rup = !git remote update `git rev-parse --symbolic-full-name HEAD@{u}|cut -d/ -f3`
+    in = !git glog HEAD..HEAD@{u}
+    out = !git glog HEAD@{u}..HEAD
+[diff]
+    algorithm = patience

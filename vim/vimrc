@@ -1,0 +1,28 @@
+" Enforce 256 colour
+if !has('gui_running')
+	set t_Co=256
+endif
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+"
+set background=dark
+set laststatus=2
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'component': {
+      \   'readonly': '%{&readonly?"⭤":""}',
+      \ }
+      \ }
+
+"colorscheme distinguished
+colorscheme Tomorrow-Night
+"colorscheme anderson
+
+set nohlsearch
+
+if has('gui_running')
+    set guifont=Source\ Code\ Pro\ Medium\ 10
+endif
