@@ -36,5 +36,6 @@
     rup = !git remote update `git rev-parse --symbolic-full-name HEAD@{u}|cut -d/ -f3`
     in = !git glog HEAD..HEAD@{u}
     out = !git glog HEAD@{u}..HEAD
+    who = shortlog -n -s --no-merges
 [diff]
     algorithm = patience
