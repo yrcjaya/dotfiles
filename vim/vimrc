@@ -6,7 +6,6 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 
-"
 set background=dark
 set laststatus=2
 
@@ -17,9 +16,7 @@ let g:lightline = {
       \ }
       \ }
 
-"colorscheme distinguished
 colorscheme Tomorrow-Night
-"colorscheme anderson
 
 set nohlsearch
 
