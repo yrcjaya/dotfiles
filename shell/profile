@@ -1,4 +1,14 @@
 export PYTHONDONTWRITEBYTECODE=1
 
+# Sublime text editor
 alias subl="/opt/Sublime\ Text\ 3/sublime_text -n"
 alias sublw="/opt/Sublime\ Text\ 3/sublime_text -n -w"
+
+# Display extender
+alias display-extend-left="xrandr --output VGA-1 --mode 1920x1080 --left-of eDP-1"
+alias display-laptop="xrandr --output VGA-1 --off"
+alias display-extend-right="xrandr --output VGA-1 --mode auto --right-of eDP-1"
+
+# General Alias
+alias ..="cd .."
+alias diga="dig +nocmd +noall +answer"
