@@ -43,3 +43,11 @@ fi
 if [ -d ${HOME}/.linuxbrew/bin ]; then
     export PATH="$HOME/.linuxbrew/bin:$PATH"
 fi
+
+# heroku Toolbelt
+if [ -d /usr/local/heroku/bin ]; then
+    export PATH="/usr/local/heroku/bin:$PATH"
+fi
+
+# SSH only password
+alias ssh_pass="ssh -o PreferredAuthentications=password -o PubkeyAuthentication=no"
