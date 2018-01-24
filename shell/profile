@@ -1,8 +1,8 @@
 export PYTHONDONTWRITEBYTECODE=1
 
 # Sublime text editor
-alias subl="/opt/Sublime\ Text\ 3/sublime_text -n"
-alias sublw="/opt/Sublime\ Text\ 3/sublime_text -n -w"
+alias subl="/opt/sublime_text_3/sublime_text -n"
+alias sublw="/opt/sublime_text_3/sublime_text -n -w"
 
 # Display extender
 alias display-extend-left="xrandr --output VGA-1 --mode 1920x1080 --left-of eDP-1"
@@ -11,17 +11,35 @@ alias display-extend-right="xrandr --output VGA-1 --mode auto --right-of eDP-1"
 
 # General Alias
 alias ..="cd .."
-alias diga="dig +nocmd +noall +answer"
+alias adig="dig +nocmd +noall +answer"
+alias ls='ls --color=tty -F'
+
+
+# IPSec Secrets cleanup
+alias rmipsec_secrets='sudo find /etc/ipsec.d -name \*.secrets -exec rm {} \;'
 
 # Powerline shell
-if [ $(basename $SHELL) = "zsh" ]; then
+if [ $(basename $SHELL) = "zsh" ] && [ -r /usr/share/powerline/zsh/powerline.zsh ]; then
   	source /usr/share/powerline/zsh/powerline.zsh
 fi
-if [ $(basename $SHELL) = "bash" ]; then
+if [ $(basename $SHELL) = "bash" ] && [ -r /usr/share/powerline/bash/powerline.sh ]; then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
   	source /usr/share/powerline/bash/powerline.sh
 fi
 
 # https://github.com/mitsuhiko/pipsi
 if [ -d ${HOME}/.local/bin ]; then
   	export PATH=${HOME}/.local/bin:$PATH
+fi
+
+source ${HOME}/Projects/dotfiles/shell/z.sh
+
+if [ -d ${HOME}/.cargo/bin ]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+if [ -d ${HOME}/.linuxbrew/bin ]; then
+    export PATH="$HOME/.linuxbrew/bin:$PATH"
 fi
