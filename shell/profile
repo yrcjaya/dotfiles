@@ -1,8 +1,7 @@
 export PYTHONDONTWRITEBYTECODE=1
 
 # Sublime text editor
-alias subl="/opt/sublime_text_3/sublime_text -n"
-alias sublw="/opt/sublime_text_3/sublime_text -n -w"
+alias sublw="subl -w"
 
 # Display extender
 alias display-extend-left="xrandr --output VGA-1 --mode 1920x1080 --left-of eDP-1"

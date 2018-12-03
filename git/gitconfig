@@ -1,5 +1,7 @@
 [include]
     path = .gitconfig.local
+[includeIf "gitdir:~/SR/"]
+    path = ~/.gitconfig-SR
 [core]
     editor = /usr/bin/vim
     autocrlf = input
@@ -41,5 +43,6 @@
     sba = "!f() { git subtree add --prefix $2 $1 master --squash; }; f"
     # the acronym stands for "subtree update"
     sbu = "!f() { git subtree pull --prefix $2 $1 master --squash; }; f"
+	up = pull --rebase --autostash
 [diff]
     algorithm = patience
